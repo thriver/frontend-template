@@ -5,11 +5,13 @@ import ChatList from './pages/ChatList/ChatList'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main />
-  },
-  {
-    path: '/chats/:userId',
-    element: <ChatList />
+    element: <Main />,
+    children: [
+      {
+        path: 'chats/:userId',
+        element: <ChatList />
+      }
+    ]
   }
 ])
 
