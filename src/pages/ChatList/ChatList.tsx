@@ -18,7 +18,8 @@ const ChatList: React.FC = () => {
   const { data, loading } = useChatsQuery({
     variables: {
       userId: userId!
-    }
+    },
+    skip: !userId
   })
 
   if (!userId) {
