@@ -1,0 +1,42 @@
+import { gql } from '@apollo/client'
+import { useChatsQuery } from '../../generated/graphql'
+import ChatPreview from '../../components/ChatPreview/ChatPreview'
+import { useParams } from 'react-router-dom'
+
+gql`
+  query Chats($userId: ID!) {
+    chats(userId: $userId) {
+      id
+      ...ChatPreview
+    }
+  }
+`
+
+const ChatList: React.FC = () => {
+  const { userId } = useParams()
+
+  const { data, loading } = useChatsQuery({
+    variables: {
+      userId: userId!
+    }
+  })
+
+  if (!userId) {
+    return <div>No user selected</div>
+  }
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div>
+      <h1>Chats</h1>
+      <ul>
+        {data?.chats.map((chat) => <ChatPreview key={chat.id} chat={chat} />)}
+      </ul>
+    </div>
+  )
+}
+
+export default ChatList
