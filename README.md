@@ -2,12 +2,33 @@
 
 This is a barebones frontend application designed to be used as a jumping-off-point for React+GraphQL projects. It is built with the following technologies:
 
-- [Vite](https://vitejs.dev/) for development and bundling
-- [React](https://reactjs.org/) for the frontend
-- [Apollo Client](https://www.apollographql.com/docs/react/) for GraphQL
-- [GraphQL Code Generator](https://www.graphql-code-generator.com/) for generating TypeScript types from GraphQL queries
-- [TypeScript](https://www.typescriptlang.org/) for type safety
-- [GraphQL](https://graphql.org/) for the interface between frontend and backend
+- [Vite](https://vitejs.dev/)
+
+  Vite is a JavaScript bundler with a focus on speed. It's used here to package the application together for the browser, with support for hot module reloading during development.
+
+- [React](https://reactjs.org/)
+
+  React is a reactive UI framework that allows you to build reusable components. It can be used in both the browser and native environments. We use it here to render the UI and manage state.
+
+  - [React Router](https://reactrouter.com/)
+
+    React Router is a frontend routing framework for React. It's what turns React from a simple component library into a full frontend application framework. We use it here for defining a URL structure for our application, and providing fast client-side routing between pages.
+
+- [Apollo Client](https://www.apollographql.com/docs/react/)
+
+  Apollo is the de-facto standard GraphQL client for React. It provides a simple interface for executing GraphQL queries and mutations, and caching the results. We use it here to communicate with our GraphQL API.
+
+- [GraphQL Code Generator](https://www.graphql-code-generator.com/)
+
+  GraphQL Code Generator is the modern replacement for Apollo's own code generation tools. It allows us to utilize GraphQL's strongly-typed schema to generate TypeScript types for our queries, mutations, and fragments, as well as React hooks for executing them which automatically use Apollo under the hood.
+
+- [TypeScript](https://www.typescriptlang.org/)
+
+  TypeScript is a statically-typed superset of JavaScript. It allows us to catch bugs at compile-time, and provides a better development experience with features like auto-complete and type checking.
+
+- [GraphQL](https://graphql.org/)
+
+  GraphQL is a strongly-typed query language for APIs with built-in support for introspection. It allows us to define the schema in our API application, and consume it from the frontend with
 
 ## Setup
 
