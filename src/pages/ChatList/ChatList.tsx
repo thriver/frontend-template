@@ -13,8 +13,11 @@ gql`
 `
 
 const ChatList: React.FC = () => {
+  // Get the user ID from path parameters
   const { userId } = useParams()
 
+  // We need to skip the query if the userId is not defined yet,
+  // but calling React hooks conditionally is not allowed.
   const { data, loading } = useChatsQuery({
     variables: {
       userId: userId!

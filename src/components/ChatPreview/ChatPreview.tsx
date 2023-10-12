@@ -8,7 +8,11 @@ gql`
   }
 `
 
-const ChatPreview: React.FC<{ chat: ChatPreviewFragment }> = ({ chat }) => {
+interface Props {
+  chat: ChatPreviewFragment
+}
+
+const ChatPreview: React.FC<Props> = ({ chat }) => {
   return (
     <li>
       {chat.name} - {chat.description}
